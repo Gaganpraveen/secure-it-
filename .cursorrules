@@ -1,0 +1,23 @@
+You are building "kavach.net" — an adaptive cybersecurity framework for rural digital banking ecosystems in India. This is a hackathon project that must be FULLY FUNCTIONAL and DEPLOYABLE. No mock data unless explicitly stated. Every feature must work end-to-end.
+
+## TECH STACK (DO NOT DEVIATE)
+- Next.js 14 (App Router, TypeScript)
+- Tailwind CSS + shadcn/ui (components)
+- Supabase (PostgreSQL database + Auth + Realtime subscriptions)
+- Anthropic Claude API (claude-sonnet-4-20250514) for AI threat analysis
+- Web Speech API (browser-native TTS for multilingual voice alerts)
+- Recharts (dashboard visualizations)
+- Lucide React (icons)
+- Deployed on Vercel
+
+## ENVIRONMENT
+- Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ANTHROPIC_API_KEY`, and `SUPABASE_SERVICE_ROLE_KEY` (for `/api/seed` and trust score updates).
+- Never commit secrets or API keys.
+
+## DATABASE
+- Run `supabase/schema.sql` in the Supabase SQL editor before using the app.
+- Use `POST /api/seed` once (with service role) to populate demo data.
+
+## CODING STANDARDS
+- TypeScript strict; Zod on API bodies; graceful fallbacks when Supabase or Claude is unavailable.
+- Dark theme primary; design tokens in `app/globals.css`.
